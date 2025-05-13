@@ -14,6 +14,7 @@ public class DayMealPlannerConfig {
 
         URI uri = UriComponentsBuilder.fromUriString("https://api.spoonacular.com/mealplanner/generate?")
                 .queryParam("timeFrame", "day")
+                .queryParam("apiKey", "1742768a4d8144a7b03fe2965c571806")
                 .build()
                 .toUri();
 
