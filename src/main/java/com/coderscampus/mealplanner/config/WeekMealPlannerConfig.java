@@ -16,8 +16,8 @@ public class WeekMealPlannerConfig {
 
         URI uri = UriComponentsBuilder.fromUriString("https://api.spoonacular.com/mealplanner/generate?")
                 .queryParam("timeFrame", "week")
-                .queryParam("targetCaloriess", "targetCalories")
-                .queryParam("deit", "diet")
+                .queryParam("targetCalories", "targetCalories")
+                .queryParam("diet", "diet")
                 .queryParam("exclusions", "exclusions")
                 .queryParam("apiKey", "d55e3abbe02c46158da5abd206a63848")
                 .build()

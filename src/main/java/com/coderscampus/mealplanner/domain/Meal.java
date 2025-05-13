@@ -1,4 +1,4 @@
-package com.coderscampus.mealplanner.dto;
+package com.coderscampus.mealplanner.domain;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.*;
