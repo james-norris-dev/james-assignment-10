@@ -32,8 +32,8 @@ public class MealPlannerService {
                     .build()
                     .toUri();
 
-            ResponseEntity<WeekResponse> weekResponse = restTemplate.getForEntity(uri, WeekResponse.class);
-            return weekResponse.getBody();
+        ResponseEntity<WeekResponse> weekResponse = restTemplate.getForEntity(uri, WeekResponse.class);
+        return weekResponse.getBody();
     }
 
         public DayResponse getDayMeals(String numCalories, String diet, String exclusions) {
@@ -46,7 +46,7 @@ public class MealPlannerService {
                     .build()
                     .toUri();
 
-            ResponseEntity<DayResponse> dayResponse = restTemplate.getForEntity(uri, DayResponse.class);
-            return dayResponse.getBody();
+        ResponseEntity<DayResponse> dayResponse = restTemplate.getForEntity(uri, DayResponse.class);
+        return dayResponse.getBody();
     }
 }

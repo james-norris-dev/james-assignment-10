@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/mealPlanner")
+@RequestMapping("api")
 public class MealPlannerController {
 
     private final MealPlannerService mealPlannerService;
@@ -21,7 +21,7 @@ public class MealPlannerController {
         this.mealPlannerService = mealPlannerService;
     }
 
-    @GetMapping("week")
+    @GetMapping("mealplanner/week")
     public ResponseEntity<WeekResponse> getWeekMeals(@RequestParam String numCalories,
                                                      @RequestParam String diet,
                                                      @RequestParam String exclusions) {
@@ -29,7 +29,7 @@ public class MealPlannerController {
         return ResponseEntity.ok(weekResponse);
     }
 
-    @GetMapping("day")
+    @GetMapping("mealplanner/day")
     public ResponseEntity<DayResponse> getDayMeals(@RequestParam String numCalories,
                                                      @RequestParam String diet,
                                                      @RequestParam String exclusions) {
