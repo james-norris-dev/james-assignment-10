@@ -1,7 +1,10 @@
 package com.coderscampus.mealplanner.service;
 
+import com.coderscampus.mealplanner.dto.DayResponse;
 import com.coderscampus.mealplanner.dto.WeekResponse;
+import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
@@ -15,8 +18,8 @@ public class MealPlannerService {
     private final RestTemplate restTemplate;
 
     @Autowired
-    private MealPlannerService(RestTemplate restTemplate) {
-        this.restTemplate = restTemplate;
+    public MealPlannerService(RestTemplateBuilder builder) {
+        this.restTemplate = builder.build();
     }
 
     public WeekResponse getWeekMeals(String numCalories, String diet, String exclusions) {
@@ -30,6 +33,20 @@ public class MealPlannerService {
                     .toUri();
 
             ResponseEntity<WeekResponse> weekResponse = restTemplate.getForEntity(uri, WeekResponse.class);
-            System.out.println(weekResponse.getBody());
+            return weekResponse.getBody();
+    }
+
+        public DayResponse getDayMeals(String numCalories, String diet, String exclusions) {
+        URI uri = UriComponentsBuilder.fromUriString("https://api.spoonacular.com/mealplanner/generate?")
+                    .queryParam("timeFrame", "day")
+                    .queryParam("targetCalories", numCalories)
+                    .queryParam("diet", diet    )
+                    .queryParam("exclusions", exclusions)
+                    .queryParam("apiKey", "d55e3abbe02c46158da5abd206a63848")
+                    .build()
+                    .toUri();
+
+            ResponseEntity<DayResponse> dayResponse = restTemplate.getForEntity(uri, DayResponse.class);
+            return dayResponse.getBody();
     }
 }
