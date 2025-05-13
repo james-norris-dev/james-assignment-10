@@ -1,5 +1,6 @@
 package com.coderscampus.mealplanner.dto;
 
+import com.coderscampus.mealplanner.domain.Week;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.*;
 
@@ -10,5 +11,5 @@ import lombok.*;
 @AllArgsConstructor
 public class WeekResponse {
     @JsonProperty("week")
-    private String week;
+    private Week week;
 }

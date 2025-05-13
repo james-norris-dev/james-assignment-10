@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("api")
+@RequestMapping("/")
 public class MealPlannerController {
 
     private final MealPlannerService mealPlannerService;
@@ -31,8 +31,8 @@ public class MealPlannerController {
 
     @GetMapping("mealplanner/day")
     public ResponseEntity<DayResponse> getDayMeals(@RequestParam String numCalories,
-                                                     @RequestParam String diet,
-                                                     @RequestParam String exclusions) {
+                                                   @RequestParam String diet,
+                                                   @RequestParam String exclusions) {
         DayResponse dayResponse = mealPlannerService.getDayMeals(numCalories, diet, exclusions);
         return ResponseEntity.ok(dayResponse);
     }
