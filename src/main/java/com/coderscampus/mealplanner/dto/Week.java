@@ -1,6 +1,5 @@
-package com.coderscampus.mealplanner.domain;
+package com.coderscampus.mealplanner.dto;
 
-import com.coderscampus.mealplanner.dto.DayResponse;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.*;
 
