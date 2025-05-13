@@ -15,10 +15,10 @@ import java.net.URI;
 @Service
 public class MealPlannerService {
 
-    @Value("${mealplanner.api.base-url}")
+    @Value("${spoonacular.api.base-url}")
     private String baseUrl;
 
-    @Value("${mealplanner.api.key}")
+    @Value("${spoonacular.api.key}")
     private String apiKey;
 
     private final RestTemplate restTemplate;
