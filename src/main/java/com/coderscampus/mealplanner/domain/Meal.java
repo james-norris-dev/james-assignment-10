@@ -7,22 +7,33 @@ import java.util.Objects;
 
 @Setter
 @Getter
-@ToString
 @NoArgsConstructor
 @AllArgsConstructor
 public class Meal {
     @JsonProperty("id")
     private Long id;
-    @JsonProperty("image")
+    @JsonProperty("Image")
     private String image;
-    @JsonProperty("imageType")
+    @JsonProperty("Image Type")
     private String imageType;
-    @JsonProperty("readyInMinutes")
+    @JsonProperty("Ready In Minutes")
     private int readyInMinutes;
-    @JsonProperty("servings")
+    @JsonProperty("Servings")
     private int servings;
-    @JsonProperty("sourceUrl")
+    @JsonProperty("Source Url")
     private String sourceUrl;
+
+    @Override
+    public String toString() {
+        return "Meal{" +
+                "id=" + id +
+                ", Image='" + image + '\'' +
+                ", Image Type='" + imageType + '\'' +
+                ", Ready In Minutes=" + readyInMinutes +
+                ", Servings=" + servings +
+                ", Source Url='" + sourceUrl + '\'' +
+                '}';
+    }
 
     @Override
     public boolean equals(Object o) {

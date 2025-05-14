@@ -5,16 +5,25 @@ import lombok.*;
 
 @Getter
 @Setter
-@ToString
 @NoArgsConstructor
 @AllArgsConstructor
 public class Nutrients {
-    @JsonProperty("calories")
+    @JsonProperty("Calories")
     private double calories;
-    @JsonProperty("protein")
+    @JsonProperty("Protein")
     private double protein;
-    @JsonProperty("fat")
+    @JsonProperty("Fat")
     private double fat;
-    @JsonProperty("carbohydrates")
+    @JsonProperty("Carbohydrates")
     private double carbohydrates;
+
+    @Override
+    public String toString() {
+        return "Nutrients{" +
+                "Calories=" + calories +
+                ", Protein=" + protein +
+                ", Fat=" + fat +
+                ", Carbohydrates=" + carbohydrates +
+                '}';
+    }
 }

@@ -8,12 +8,19 @@ import lombok.*;
 import java.util.List;
 @Getter
 @Setter
-@ToString
 @NoArgsConstructor
 @AllArgsConstructor
 public class DayResponse {
-    @JsonProperty("meals")
+    @JsonProperty("Meals")
     private List<Meal> meals;
-    @JsonProperty("nutrients")
+    @JsonProperty("Nutrients")
     private Nutrients nutrients;
+
+    @Override
+    public String toString() {
+        return "DayResponse{" +
+                "Meals=" + meals +
+                ", Nutrients=" + nutrients +
+                '}';
+    }
 }

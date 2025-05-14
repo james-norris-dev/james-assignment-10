@@ -3,7 +3,7 @@ package com.coderscampus.mealplanner.web;
 import com.coderscampus.mealplanner.dto.DayResponse;
 import com.coderscampus.mealplanner.dto.WeekResponse;
 import com.coderscampus.mealplanner.service.MealPlannerService;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,15 +11,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+@AllArgsConstructor
 @RequestMapping("/")
 public class MealPlannerController {
 
     private final MealPlannerService mealPlannerService;
-
-    @Autowired
-    public MealPlannerController(MealPlannerService mealPlannerService) {
-        this.mealPlannerService = mealPlannerService;
-    }
 
     @GetMapping("mealplanner/week")
     public ResponseEntity<WeekResponse> getWeekMeals(@RequestParam String numCalories,

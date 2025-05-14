@@ -6,10 +6,16 @@ import lombok.*;
 
 @Getter
 @Setter
-@ToString
 @NoArgsConstructor
 @AllArgsConstructor
 public class WeekResponse {
-    @JsonProperty("week")
+    @JsonProperty("Week")
     private Week week;
+
+    @Override
+    public String toString() {
+        return "WeekResponse{" +
+                "Week=" + week +
+                '}';
+    }
 }

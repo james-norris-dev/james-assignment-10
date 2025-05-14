@@ -6,22 +6,34 @@ import lombok.*;
 
 @Getter
 @Setter
-@ToString
 @NoArgsConstructor
 @AllArgsConstructor
 public class Week {
-    @JsonProperty("monday")
+    @JsonProperty("Monday")
     private DayResponse monday;
-    @JsonProperty("tuesday")
+    @JsonProperty("Tuesday")
     private DayResponse tuesday;
-    @JsonProperty("wednesday")
+    @JsonProperty("Wednesday")
     private DayResponse wednesday;
-    @JsonProperty("thursday")
+    @JsonProperty("Thursday")
     private DayResponse thursday;
-    @JsonProperty("friday")
+    @JsonProperty("Friday")
     private DayResponse friday;
-    @JsonProperty("saturday")
+    @JsonProperty("Saturday")
     private DayResponse saturday;
-    @JsonProperty("sunday")
+    @JsonProperty("Sunday")
     private DayResponse sunday;
+
+    @Override
+    public String toString() {
+        return "Week{" +
+                "Monday=" + monday +
+                ", Tuesday=" + tuesday +
+                ", Wednesday=" + wednesday +
+                ", Thursday=" + thursday +
+                ", Friday=" + friday +
+                ", Saturday=" + saturday +
+                ", Sunday=" + sunday +
+                '}';
+    }
 }
