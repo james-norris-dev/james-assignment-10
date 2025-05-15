@@ -9,13 +9,13 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 public class WeekResponse {
-    @JsonProperty("Week")
+
     private Week week;
 
     @Override
     public String toString() {
         return "WeekResponse{" +
-                "Week=" + week +
+                "week=" + week +
                 '}';
     }
 }

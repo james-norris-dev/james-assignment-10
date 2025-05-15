@@ -10,28 +10,23 @@ import java.util.Objects;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Meal {
-    @JsonProperty("id")
+
     private Long id;
-    @JsonProperty("Image")
     private String image;
-    @JsonProperty("Image Type")
     private String imageType;
-    @JsonProperty("Ready In Minutes")
     private int readyInMinutes;
-    @JsonProperty("Servings")
     private int servings;
-    @JsonProperty("Source Url")
     private String sourceUrl;
 
     @Override
     public String toString() {
         return "Meal{" +
                 "id=" + id +
-                ", Image='" + image + '\'' +
-                ", Image Type='" + imageType + '\'' +
-                ", Ready In Minutes=" + readyInMinutes +
-                ", Servings=" + servings +
-                ", Source Url='" + sourceUrl + '\'' +
+                ", image='" + image + '\'' +
+                ", imageType='" + imageType + '\'' +
+                ", readyInMinutes=" + readyInMinutes +
+                ", servings=" + servings +
+                ", sourceUrl='" + sourceUrl + '\'' +
                 '}';
     }
 

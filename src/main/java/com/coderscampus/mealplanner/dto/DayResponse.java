@@ -11,16 +11,15 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 public class DayResponse {
-    @JsonProperty("Meals")
+
     private List<Meal> meals;
-    @JsonProperty("Nutrients")
     private Nutrients nutrients;
 
     @Override
     public String toString() {
         return "DayResponse{" +
-                "Meals=" + meals +
-                ", Nutrients=" + nutrients +
+                "meals=" + meals +
+                ", nutrients=" + nutrients +
                 '}';
     }
 }
