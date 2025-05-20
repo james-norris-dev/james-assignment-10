@@ -1,8 +1,8 @@
 package com.coderscampus.mealplanner.dto;
 
-import com.coderscampus.mealplanner.domain.Week;
-import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.*;
+
+import java.util.Map;
 
 @Getter
 @Setter
@@ -10,7 +10,7 @@ import lombok.*;
 @AllArgsConstructor
 public class WeekResponse {
 
-    private Week week;
+    private Map<String, DayResponse> week;
 
     @Override
     public String toString() {
